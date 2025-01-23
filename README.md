@@ -1,0 +1,2 @@
+# notes
+SWE Journey Notes
