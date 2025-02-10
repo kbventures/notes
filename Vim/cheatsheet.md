@@ -1,56 +1,81 @@
-     ATTENTION:
-     The commands in the lessons will modify the text.  Make a copy of this
-     file to practice on (if you started "vimtutor" this is already a copy).
+# Lesson 1
+- **h**, **j**, **k**, **l**: Cursor movement (either the arrow or hjkl keys)
+- **vim FILENAME <ENTER>**: To start Vim from the shell
+- **<ESC> :q! <ENTER>**: To trash all changes
+- **<ESC> :wq <ENTER>**: To save the changes
+- **x**: To delete the character at the cursor
+- **i**: INSERT MODE before the cursor
+- **A**: INSERT MODE after the line
 
-     It is important to remember that this tutor is set up to teach by
-     use.  That means that you need to execute the commands to learn them
-     properly.  If you only read the text, you will forget the commands!
+# Lesson 2
+- **dw**: Delete from the cursor to the next word
+- **d$**: Delete from the cursor to the end of the line
+- **dd**: Delete the whole line
+- **2w**: Repeat the motion with a number
+- **operator [number] motion**: 
+    - **operator** is what to do (e.g., d)
+    - **[optional] repeat motion** (e.g., 2)
+    - **motion** (e.g., 2w, move to the text to operate)
+- **0**: Move to the start of the line
+- **u**: Undo previous action
+- **U**: Undo all the actions on a line
+- **Ctrl-R**: Undo the undo's
 
-     Now, make sure that your Caps-Lock key is NOT depressed and press
-     the   j   key enough times to move the cursor so that lesson 1.1
-     completely fills the screen.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                        Lesson 1.1:  MOVING THE CURSOR
+# Lesson 3
+- **p**: Put the deleted text AFTER the cursor
+- **r [char]**: Replace the character under the cursor
+- **c**: Change from the cursor where the motion takes you. Eg. `c$`, `ce`, `cw`
+- **c [number] motion**: Format for changing text
 
+# Lesson 4
+- **CTRL-G**: Show your location and the file status
+- **G**: Move to the end of the file
+- **number G**: Move to that line number
+- **gg**: Go to the first line
+- **/foo <ENTER>**: Search for "foo" forward
+- **?foo <ENTER>**: Search for "foo" backward
+- **n**: Find the next occurrence
+- **N**: Find the previous occurrence
+- **CTRL-O**: Takes you to the previous position
+- **CTRL-I**: Takes you to the newer position
+- **%**: Type it on `( )`, `[ ]`, `{ }` to go to its match
+- **:s/old/new**: Substitute first "old" for "new"
+- **:s/old/new/g**: Substitute all "old" for "new" in the line
+- **:#,#s/old/new/g**: Substitute all matches between lines #
+- **:%s/old/new/g**: Substitute all matches in the file
+- **:%s/old/new/gc**: To check each time, add "c"
 
-   ** To move the cursor, press the h,j,k,l keys as indicated. **
-             ^
-             k              Hint:  The h key is at the left and moves left.
-       < h       l >               The l key is at the right and moves right.
-             j                     The j key looks like a down arrow.
-             v
-  1. Move the cursor around the screen until you are comfortable.
+# Lesson 5
+- **:!command**: Execute an external command
+    - Eg. Windows: `!dir` or in Unix: `!ls`
+- **:w FILENAME**: Write the current Vim file to disk with the name FILENAME
+- **v motion :w FILENAME**: Save visually selected lines in the file FILENAME
+- **:r FILENAME**: Retrieve disk file FILENAME and put it below the cursor position
+- **:r !command**: Reads the output of a command and puts it below the cursor (Eg. Windows: `!dir`, Unix: `!ls`)
 
-  2. Hold down the down key (j) until it repeats.
-     Now you know how to move to the next lesson.
+# Lesson 6
+- **o**: Insert a line BELOW the cursor and start INSERT MODE
+- **O**: Open a line ABOVE the cursor
+- **a**: Insert text after the cursor
+- **A**: Insert text after the end of the line
+- **e**: Move to the end of a word
+- **y**: Copy the text
+- **p**: Paste the copied text
+- **R**: Enter REPLACE MODE until `<ESC>` is pressed
+- **:set foo**: Set the option "foo"
+    - **ic**: Ignore case (for search)
+    - **is**: In search
+    - **hls**: Highlight search matches
+    - Example: `:set ic` to ignore upper/lower case in searches
+    - **:set nofoo**: Turn off an option (e.g., `:set noic`)
 
-  3. Using the down key, move to lesson 1.2.
-
-NOTE: If you are ever unsure about something you typed, press <ESC> to place
-      you in Normal mode.  Then retype the command you wanted.
-
-NOTE: The cursor keys should also work.  But using hjkl you will be able to
-      move around much faster, once you get used to it.  Really!
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                            Lesson 1.2: EXITING VIM
-
-
-  !! NOTE: Before executing any of the steps below, read this entire lesson!!
-
-  1. Press the <ESC> key (to make sure you are in Normal mode).
-
-  2. Type:      :q! <ENTER>.
-     This exits the editor, DISCARDING any changes you have made.
-
-  3. Get back here by executing the command that got you into this tutor. That
-     might be:  vimtutor <ENTER>
-
-  4. If you have these steps memorized and are confident, execute steps
-     1 through 3 to exit and re-enter the editor.
-
-NOTE:  :q! <ENTER>  discards any changes you made.  In a few lessons you
-       will learn how to save the changes to a file.
-
-  5. Move the cursor down to lesson 1.3.
-Type  :qa  and press <Enter> to exit Vim                                                        
+# Lesson 7
+- **<HELP KEY>**: Access Vim’s help system
+- **<F1>**: Open help
+- **:help <ENTER>**: Access Vim help
+- **:help cmd**: Find help on "cmd"
+- **CTRL-W CTRL-W**: Jump to another window
+- **:q**: Close help window
+- **~/.vimrc**: A startup script to keep your preferred settings
+- **:cmd CTRL-d**: Show possible completions for a command
+- **:cmd <TAB>**: Autocomplete a command
