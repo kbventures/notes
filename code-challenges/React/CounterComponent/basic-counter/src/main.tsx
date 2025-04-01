@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import CounterApp from './CounterApp.tsx';
+import CounterApp from './CounterApp.tsx'
 import './index.css'
 import App from './App.tsx'
 
