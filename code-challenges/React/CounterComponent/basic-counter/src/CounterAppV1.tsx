@@ -6,9 +6,7 @@ function CounterApp (): JSX.Element{
     let [step, setStep] = useState<number>(1)
 
 
-
-
-    function counter(e: React.MouseEvent<HTMLButtonElement>) {
+ function counter(e: React.MouseEvent<HTMLButtonElement>) {
         switch (e.currentTarget.textContent) {
           case "Increment":
             setValue(value + step);
@@ -24,7 +22,6 @@ function CounterApp (): JSX.Element{
         }
       }
       
-
     
     return(
         <>
