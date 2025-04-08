@@ -6,7 +6,7 @@ interface CounterPropsInterface {
     step?: number, 
 }
 
-export function CounterAppV4({CounterProps}:{CounterProps: CounterPropsInterface}){
+export function CounterAppV4({CounterProps}:{CounterProps?: CounterPropsInterface}){
 // let {initialValue, step } = CounterProps; 
 
 
