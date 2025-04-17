@@ -1,8 +1,8 @@
 {
-  "name": "httpserver",
+  "name": "http-server-crud",
   "version": "1.0.0",
-  "main": "basicHttp.js",
-  "type":"module",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

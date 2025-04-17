@@ -1,4 +1,4 @@
-# Task: Intermediate Counter Component
+# Task: Advanced Counter Component
 
 ## Requirements:
 
@@ -9,23 +9,25 @@
 - `max` (default: `Infinity`)
 
 ### State Management:
-- Use `useState` and  `useEffect`
+- Use `useReducer` and `useEffect`; 
+
+### Persistence:
+- Store and retrieve the counter value from `localStorage`.
 
 ### Actions:
 - **Increment/Decrement** (respecting min/max).
 - **Reset** (resets to `initialValue`).
 
-### Persistence:
-- Store the counter value in `localStorage` and retrieve it on load.
+### Keyboard Support:
+- Pressing **Arrow Up/Down** increases/decreases the count.
+- Pressing **"r"** resets it.
 
-### UI:
-- Display the current count.
-- Buttons for increment, decrement, and reset.
+### Unit Tests:
+- Test counter updates and persistence.
 
 ## Bonus:
 - Add a **"Double"** button that multiplies the count by 2.
 - Show a warning when trying to exceed `max` or go below `min`.
 
-
-
+Would you like additional constraints to make it even more challenging?
 
