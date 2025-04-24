@@ -82,3 +82,6 @@ If all goes well, it sends back data. React gets it, updates the UI. Everyone's 
 -   Then the real request is sent.
 
 -   No proper CORS headers? 💥 CORS error.
+
+
+![CORS](image.png)
