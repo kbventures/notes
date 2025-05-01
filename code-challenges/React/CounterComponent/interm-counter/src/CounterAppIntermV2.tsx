@@ -38,26 +38,31 @@ export function CounterAppIntermV2 () {
 
     function reducer(state:stateShape, action: { type: string, payload?: number | string } ): stateShape{
         if(action.type == "Decrement") {
-            if(Number(action.payload) < 0){
+            const currVal = state.value - state.step; 
+            if(currVal < 0){
                 localStorage.setItem('error', "Must be greater than 0!")
                 return {...state, error: "Must be greater thahn 0!"}
             }
+            localStorage.setItem('error', "")
             localStorage.setItem('value',String(state.value - state.step))
-            return {...state, value: state.value - state.step};
+            return {...state, value: currVal, error:""};
         }
         if(action.type =="Increment") {
-            if(Number(action.payload > 5))
+            const currVal = state.value + state.step; 
+            if(currVal > 5)
             {
-                
+                localStorage.setItem('error', "Must be lower than 5!")
+                return {...state, error: "Must be lower than 5!"}
             }
+            localStorage.setItem('error', "")
             localStorage.setItem('value', String(state.value + state.step))
-            return {...state, value: state.value + state.step}; 
+            return {...state, value: currVal, error: ""}; 
         }
 
         if(action.type =="Reset") {
             localStorage.setItem('value', "0")
             localStorage.setItem('step', '1')
-            return {...state, value: 0 , step: 1}; 
+            return {...state, value: 0 , step: 1, error:""}; 
         }
 
         if(action.type == "ERROR"){
@@ -66,10 +71,10 @@ export function CounterAppIntermV2 () {
         }
 
         if(action.type == "SET_VALUE"){
-            return {...state, value: Number(action.payload)}
+            return {...state, value: action.payload} as stateShape
         }
         if(action.type == "SET_STEP"){
-            return {...state, step: Number(action.payload)};
+            return {...state, step: action.payload} as stateShape
         }
 
         return state
@@ -83,6 +88,7 @@ export function CounterAppIntermV2 () {
        <button onClick={()=>dispatch({type: "Reset"})}>Reset</button>
         {}
        <div>Value: {state.value}</div>
+       { state.error !== "" && <div>Error: {state.error}</div>}
        </> 
     )
 }
